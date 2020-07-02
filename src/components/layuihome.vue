@@ -13,7 +13,7 @@
       </el-aside>
       <el-container
         class="container-aside"
-        :style="{ paddingLeft: getCollapseState == false ? '195px' : '60px' }"
+        :style="{ paddingLeft: getCollapseState == false ? '200px' : '64px' }"
       >
         <Header></Header>
         <el-main

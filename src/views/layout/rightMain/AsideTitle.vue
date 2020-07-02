@@ -240,12 +240,14 @@ export default {
         }
         //标题导航宽度
         this.navWidth = this.$el.querySelector(".titleNav").scrollWidth;
-
+        console.log(this.navWidth, this.pageWidth);
         //如果标题导航超出页面宽度 则显示方向键 否则隐藏
         if (this.navWidth >= this.pageWidth) {
+          console.log("------------");
           this.isShow = true;
           this.$el.querySelector(".titleNav").style.right = "20px";
         } else {
+          console.log("++++++++");
           this.isShow = false;
         }
       });
