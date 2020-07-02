@@ -1,0 +1,56 @@
+const state = {
+  nav: [], //左侧导航栏数据
+  isCollapse: false, //是否收缩左侧导航栏 false为展开 true为收缩
+  asideTitle: [
+    {
+      title: "主控制台",
+      path: "/layui",
+      activeIndex: 0
+    }
+  ], //存储点击左侧导航栏后的导航名，作为标题显示头
+  crumbs: ["控制台", "主控制台"], //存储面包屑
+  // {
+  //   parentTitle: '控制台',
+  //     childTitle: '主控制台'
+  // }
+  activeIndex: 0, //当前活跃的标题下标
+  count: 0 //下标增值变量
+};
+
+const mutations = {
+  setCollapse(state, payload) {
+    state.isCollapse = payload;
+  },
+  setAside(state, values) {
+    state.asideTitle.push(values);
+  },
+  delOrAddAside(state, value) {
+    state.asideTitle = value;
+  },
+  setActiveIndex(state, value) {
+    state.activeIndex = value;
+  },
+  setCount(state, value) {
+    state.count = value;
+  },
+  setCrumbs(state, crumbs) {
+    console.log("setCrumbs", crumbs);
+    state.crumbs = crumbs;
+  },
+  setNav(state, values) {
+    state.nav = values;
+  }
+};
+
+const actions = {
+  setNavs(context, nav) {
+    context.commit("setNav", nav);
+  }
+};
+
+export default {
+  namespaced: true,
+  state,
+  mutations,
+  actions
+};
